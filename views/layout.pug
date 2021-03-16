@@ -1,0 +1,61 @@
+doctype html
+//-if IE 8
+//- [if !IE] <!
+//- <![endif]
+head
+  meta(charset='utf-8')
+  title Aplikasi Deteksi Ph Air
+  meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport')
+  meta(content='' name='description')
+  meta(content='' name='author')
+  //- ================== BEGIN BASE CSS STYLE ==================
+  link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet')
+  link(href='../assets/plugins/jquery-ui/jquery-ui.min.css' rel='stylesheet')
+  link(href='../assets/plugins/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet')
+  link(href='../assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css' rel='stylesheet')
+  link(href='../assets/plugins/animate/animate.min.css' rel='stylesheet')
+  link(href='../assets/css/transparent/style.min.css' rel='stylesheet')
+  link(href='../assets/css/transparent/style-responsive.min.css' rel='stylesheet')
+  link#theme(href='../assets/css/transparent/theme/default.css' rel='stylesheet')
+  block css
+  //- ================== END BASE CSS STYLE ==================
+  //- ================== BEGIN BASE JS ==================
+  script(src='../assets/plugins/pace/pace.min.js')
+  //- ================== END BASE JS ==================
+//- begin page-cover
+.page-cover
+//- end page-cover
+//- begin #page-loader
+#page-loader.fade.show
+  span.spinner
+//- end #page-loader
+//- begin #page-container
+#page-container.page-container.fade.page-sidebar-fixed.page-header-fixed
+  include include/_header
+  include include/_sidebar
+  block content
+  //- begin scroll to top btn
+  a.btn.btn-icon.btn-circle.btn-success.btn-scroll-to-top.fade(href='javascript:;' data-click='scroll-top')
+    i.fa.fa-angle-up
+  //- end scroll to top btn
+//- end page container
+//- ================== BEGIN BASE JS ==================
+script(src='../assets/plugins/jquery/jquery-3.2.1.min.js')
+script(src='../assets/plugins/jquery-ui/jquery-ui.min.js')
+script(src='../assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js')
+//-if lt IE 9
+  script(src='../assets/crossbrowserjs/html5shiv.js')
+  script(src='../assets/crossbrowserjs/respond.min.js')
+  script(src='../assets/crossbrowserjs/excanvas.min.js')
+script(src='../assets/plugins/slimscroll/jquery.slimscroll.min.js')
+script(src='../assets/plugins/js-cookie/js.cookie.js')
+script(src='../assets/js/theme/transparent.min.js')
+script(src='../assets/js/apps.min.js')
+script(src='../assets/js/my_apps.js')
+//- ================== END BASE JS ==================
+script.
+  $(document).ready(function() {
+    App.init();
+    app.getNum()
+  });
+block script

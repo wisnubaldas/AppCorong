@@ -1,0 +1,80 @@
+doctype html
+//- [if IE 8]> <html lang="en" class="ie8"> <![endif]
+//- [if !IE]><!
+html(lang='en')
+	//- <![endif]
+	head
+		meta(charset='utf-8')
+		title PDAM Kota Tangerang | Login Page
+		meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport')
+		meta(content='' name='description')
+		meta(content='' name='author')
+		//- ================== BEGIN BASE CSS STYLE ==================
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet')
+		link(href='../assets/plugins/jquery-ui/jquery-ui.min.css' rel='stylesheet')
+		link(href='../assets/plugins/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet')
+		link(href='../assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css' rel='stylesheet')
+		link(href='../assets/plugins/animate/animate.min.css' rel='stylesheet')
+		link(href='../assets/css/transparent/style.min.css' rel='stylesheet')
+		link(href='../assets/css/transparent/style-responsive.min.css' rel='stylesheet')
+		link#theme(href='../assets/css/transparent/theme/default.css' rel='stylesheet')
+		//- ================== END BASE CSS STYLE ==================
+		//- ================== BEGIN BASE JS ==================
+		script(src='../assets/plugins/pace/pace.min.js')
+		//- ================== END BASE JS ==================
+	body.pace-top
+		//- begin #page-loader
+		#page-loader.fade.show
+			span.spinner
+		//- end #page-loader
+		//- begin #page-container
+		#page-container.fade
+			//- begin login
+			.login.bg-white-transparent-1.animated.fadeInDown
+				//- begin brand
+				.login-header
+					.brand
+						span.logo
+						b PDAM
+						| Kota Tangerang
+						| 
+						small Monitoring Ph Air PDAM Kota Tangerang
+					.icon
+						i.fa.fa-lock
+				//- end brand
+				//- begin login-content
+				.login-content
+					form.margin-bottom-0(action='/auth' method='POST')
+						.form-group.m-b-20
+							input.form-control.form-control-lg.inverse-mode(type='text' placeholder='Email Address' required name='email')
+						.form-group.m-b-20
+							input.form-control.form-control-lg.inverse-mode(type='password' placeholder='Password' required name='password')
+						.checkbox.checkbox-css.m-b-20
+							input(type='checkbox' id='remember_checkbox')
+							label(for='remember_checkbox')
+								| Remember Me
+								| 
+						.login-buttons
+							button.btn.btn-success.btn-block.btn-lg(type='submit') Sign me in
+				//- end login-content
+			//- end login
+		//- end page container
+		//- ================== BEGIN BASE JS ==================
+		script(src='../assets/plugins/jquery/jquery-3.2.1.min.js')
+		script(src='../assets/plugins/jquery-ui/jquery-ui.min.js')
+		script(src='../assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js')
+		//-
+			[if lt IE 9]>
+			<script src="../assets/crossbrowserjs/html5shiv.js"></script>
+			<script src="../assets/crossbrowserjs/respond.min.js"></script>
+			<script src="../assets/crossbrowserjs/excanvas.min.js"></script>
+			<![endif]
+		script(src='../assets/plugins/slimscroll/jquery.slimscroll.min.js')
+		script(src='../assets/plugins/js-cookie/js.cookie.js')
+		script(src='../assets/js/theme/transparent.min.js')
+		script(src='../assets/js/apps.min.js')
+		//- ================== END BASE JS ==================
+		script.
+			$(document).ready(function() {
+			App.init();
+			});

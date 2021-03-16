@@ -1,0 +1,23 @@
+extends layout
+block content
+  #content.content
+    //- - console.log(stat)
+    #torrent.row
+      each val in JSON.parse(stat)
+        .col-lg-3.col-md-6
+          .widget.widget-stats.bg-blue
+            .stats-icon.stats-icon-lg
+              i.fa.fa-globe.fa-fw
+            .stats-content
+              .stats-title #{val.status}
+              .stats-number #{val.status}
+              .stats-progress.progress
+                .progress-bar(style='width: 70.1%;')
+              .stats-desc #{val.date}
+
+//- block script
+  //- script.
+  //-   const x = !{stat};
+  //-   console.log(x)
+  
+    

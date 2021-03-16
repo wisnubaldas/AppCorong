@@ -1,0 +1,1 @@
+DEBUG=appcorong:* npm start

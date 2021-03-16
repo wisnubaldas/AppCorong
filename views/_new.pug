@@ -1,0 +1,223 @@
+doctype html
+//-if IE 8
+//- [if !IE] <!
+//- <![endif]
+head
+  meta(charset='utf-8')
+  title Color Admin | Blank Page
+  meta(content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport')
+  meta(content='' name='description')
+  meta(content='' name='author')
+  //- ================== BEGIN BASE CSS STYLE ==================
+  link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet')
+  link(href='../assets/plugins/jquery-ui/jquery-ui.min.css' rel='stylesheet')
+  link(href='../assets/plugins/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet')
+  link(href='../assets/plugins/font-awesome/5.0/css/fontawesome-all.min.css' rel='stylesheet')
+  link(href='../assets/plugins/animate/animate.min.css' rel='stylesheet')
+  link(href='../assets/css/transparent/style.min.css' rel='stylesheet')
+  link(href='../assets/css/transparent/style-responsive.min.css' rel='stylesheet')
+  link#theme(href='../assets/css/transparent/theme/default.css' rel='stylesheet')
+  //- ================== END BASE CSS STYLE ==================
+  //- ================== BEGIN BASE JS ==================
+  script(src='../assets/plugins/pace/pace.min.js')
+  //- ================== END BASE JS ==================
+//- begin page-cover
+.page-cover
+//- end page-cover
+//- begin #page-loader
+#page-loader.fade.show
+  span.spinner
+//- end #page-loader
+//- begin #page-container
+#page-container.page-container.fade.page-sidebar-fixed.page-header-fixed
+  //- begin #header
+  #header.header.navbar-default
+    //- begin navbar-header
+    .navbar-header
+      a.navbar-brand(href='index.html')
+        span.navbar-logo
+        b Color
+        |  Admin
+      button.navbar-toggle(type='button' data-click='sidebar-toggled')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    //- end navbar-header
+    //- begin header-nav
+    ul.navbar-nav.navbar-right
+      li
+        form.navbar-form
+          .form-group
+            input.form-control(type='text' placeholder='Enter keyword')
+            button.btn.btn-search(type='submit')
+              i.fa.fa-search
+      li.dropdown
+        a.dropdown-toggle.f-s-14(href='javascript:;' data-toggle='dropdown')
+          i.fa.fa-bell
+          span.label 5
+        ul.dropdown-menu.media-list.dropdown-menu-right
+          li.dropdown-header NOTIFICATIONS (5)
+          li.media
+            a(href='javascript:;')
+              .media-left
+                i.fa.fa-bug.media-object.bg-silver-darker
+              .media-body
+                h6.media-heading
+                  | Server Error Reports 
+                  i.fa.fa-exclamation-circle.text-danger
+                .text-muted.f-s-11 3 minutes ago
+          li.media
+            a(href='javascript:;')
+              .media-left
+                img.media-object(src='../assets/img/user/user-1.jpg' alt='')
+                i.fab.fa-facebook-messenger.text-primary.media-object-icon
+              .media-body
+                h6.media-heading John Smith
+                p Quisque pulvinar tellus sit amet sem scelerisque tincidunt.
+                .text-muted.f-s-11 25 minutes ago
+      li.dropdown.navbar-user
+        a.dropdown-toggle(href='javascript:;' data-toggle='dropdown')
+          img(src='../assets/img/user/user-13.jpg' alt='')
+          span.d-none.d-md-inline Adam Schwartz
+          b.caret
+        .dropdown-menu.dropdown-menu-right
+          a.dropdown-item(href='javascript:;') Edit Profile
+          a.dropdown-item(href='javascript:;') Setting
+          .dropdown-divider
+          a.dropdown-item(href='javascript:;') Log Out
+    //- end header navigation right
+  //- end #header
+  //- begin #sidebar
+  #sidebar.sidebar
+    //- begin sidebar scrollbar
+    div(data-scrollbar='true' data-height='100%')
+      //- begin sidebar user
+      ul.nav
+        li.nav-profile
+          a(href='javascript:;' data-toggle='nav-profile')
+            .image
+              img(src='../assets/img/user/user-13.jpg' alt='')
+            .info
+              b.caret.pull-right
+              | &#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;Sean Ngu
+              small Front end developer
+        li
+          ul.nav.nav-profile
+            li
+              a(href='javascript:;')
+                i.fa.fa-cog
+                |  Settings
+            li
+              a(href='javascript:;')
+                i.fa.fa-pencil-alt
+                |  Send Feedback
+            li
+              a(href='javascript:;')
+                i.fa.fa-question-circle
+                |  Helps
+      //- end sidebar user
+      //- begin sidebar nav
+      ul.nav
+        li.nav-header Navigation
+        li.has-sub.active
+          a(href='javascript:;')
+            b.caret
+            i.fa.fa-cogs
+            span Page Options
+          ul.sub-menu
+            li.active
+              a(href='page_blank.html') Blank Page
+            li
+              a(href='page_with_footer.html') Page with Footer
+            li
+              a(href='page_without_sidebar.html') Page without Sidebar
+            li
+              a(href='page_with_right_sidebar.html') Page with Right Sidebar
+            li
+              a(href='page_with_minified_sidebar.html') Page with Minified Sidebar
+            li
+              a(href='page_with_two_sidebar.html') Page with Two Sidebar
+            li
+              a(href='page_with_line_icons.html') Page with Line Icons
+            li
+              a(href='page_with_ionicons.html') Page with Ionicons
+            li
+              a(href='page_full_height.html') Full Height Content
+            li
+              a(href='page_with_wide_sidebar.html') Page with Wide Sidebar
+            li
+              a(href='page_with_mega_menu.html') Page with Mega Menu
+            li
+              a(href='page_with_top_menu.html') Page with Top Menu
+            li
+              a(href='page_with_boxed_layout.html') Page with Boxed Layout
+            li
+              a(href='page_with_mixed_menu.html') Page with Mixed Menu
+            li
+              a(href='page_boxed_layout_with_mixed_menu.html') Boxed Layout with Mixed Menu
+        //- begin sidebar minify button
+        li
+          a.sidebar-minify-btn(href='javascript:;' data-click='sidebar-minify')
+            i.fa.fa-angle-double-left
+        //- end sidebar minify button
+      //- end sidebar nav
+    //- end sidebar scrollbar
+  .sidebar-bg
+  //- end #sidebar
+  //- begin #content
+  #content.content
+    //- begin breadcrumb
+    ol.breadcrumb.pull-right
+      li.breadcrumb-item
+        a(href='javascript:;') Home
+      li.breadcrumb-item
+        a(href='javascript:;') Page Options
+      li.breadcrumb-item.active Blank Page
+    //- end breadcrumb
+    //- begin page-header
+    h1.page-header
+      | Blank Page 
+      small header small text goes here...
+    //- end page-header
+    //- begin panel
+    .panel.panel-inverse
+      .panel-heading
+        .panel-heading-btn
+          a.btn.btn-xs.btn-icon.btn-circle.btn-default(href='javascript:;' data-click='panel-expand')
+            i.fa.fa-expand
+          a.btn.btn-xs.btn-icon.btn-circle.btn-success(href='javascript:;' data-click='panel-reload')
+            i.fa.fa-redo
+          a.btn.btn-xs.btn-icon.btn-circle.btn-warning(href='javascript:;' data-click='panel-collapse')
+            i.fa.fa-minus
+          a.btn.btn-xs.btn-icon.btn-circle.btn-danger(href='javascript:;' data-click='panel-remove')
+            i.fa.fa-times
+        h4.panel-title Panel Title here
+      .panel-body
+        | Panel Content Here
+    //- end panel
+  //- end #content
+  //- begin scroll to top btn
+  a.btn.btn-icon.btn-circle.btn-success.btn-scroll-to-top.fade(href='javascript:;' data-click='scroll-top')
+    i.fa.fa-angle-up
+  //- end scroll to top btn
+//- end page container
+//- ================== BEGIN BASE JS ==================
+script(src='../assets/plugins/jquery/jquery-3.2.1.min.js')
+script(src='../assets/plugins/jquery-ui/jquery-ui.min.js')
+script(src='../assets/plugins/bootstrap/4.0.0/js/bootstrap.bundle.min.js')
+//-if lt IE 9
+  script(src='../assets/crossbrowserjs/html5shiv.js')
+  script(src='../assets/crossbrowserjs/respond.min.js')
+  script(src='../assets/crossbrowserjs/excanvas.min.js')
+script(src='../assets/plugins/slimscroll/jquery.slimscroll.min.js')
+script(src='../assets/plugins/js-cookie/js.cookie.js')
+script(src='../assets/js/theme/transparent.min.js')
+script(src='../assets/js/apps.min.js')
+script(src='../assets/js/my_apps.js')
+//- ================== END BASE JS ==================
+script.
+  $(document).ready(function() {
+  App.init();
+  let x = app.getNum()
+  console.log(x)
+  });

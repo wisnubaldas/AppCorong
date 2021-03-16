@@ -1,0 +1,13 @@
+extends layout
+block content
+  #content.content
+    .error
+      .alert.alert-danger.fade.show
+        .error-message 404 We couldn&apos;t find it...
+          .error-desc.m-b-30
+            | The page you&apos;re looking for doesn&apos;t exist. 
+            br
+            |Perhaps, there pages will help find what you&apos;re looking for.
+          div
+            a.btn.btn-success.p-l-20.p-r-20(href='/') Go Home
+        
