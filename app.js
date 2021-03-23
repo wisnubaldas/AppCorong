@@ -8,7 +8,7 @@ const Sequelize = require('sequelize')
 // const SessionStore = require('express-session-sequelize')(session.Store);
 // var passport = require('passport');
 // var LocalStrategy = require('passport-local').Strategy;
-const uuid = require('uuid').v4
+// const uuid = require('uuid').v4
 
 // config session ke sqlite
 // const sequelize = new Sequelize('mainDB', null, null, {    
@@ -21,6 +21,9 @@ const uuid = require('uuid').v4
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 var app = express();
+app.use(express.urlencoded({
+  extended: true
+}))
 
 // // pake session sqlite
 // app.use(cookieParser());

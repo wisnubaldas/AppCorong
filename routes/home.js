@@ -1,14 +1,12 @@
 var express = require('express');
 const bodyParser = require('body-parser')
-const { Status } = require('../sequelize')
+const { Status, StatusPh } = require('../sequelize')
 var router = express.Router();
 // Use the session middleware
 
 // middleware that is specific to this router
 router.use(function (req, res, next) {
-  console.log('Time:', Date.now())
-  
-
+  // console.log('Time:', Date.now())
   if(!req.session.belekok)
   {
     res.redirect('/');
@@ -23,8 +21,15 @@ router.use(function (req, res, next) {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // Status.findAll().then(status => res.render('index', { stat: JSON.stringify(status,null,2)}));
-  res.render('home', { message: req.session.belekok });
+  const statusPh = StatusPh.findAll({
+    attributes: ['id','tabung', 'nilai','createdAt']
+  });
+  statusPh.then(function(result) {
+    // console.log(result)
+    // res.send({sdads:result})
+    res.render('home', { message: req.session.belekok,data_ph:result });
+});
+  // res.render('home', { message: req.session.belekok });
 });
 
 // create a user

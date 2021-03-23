@@ -43,7 +43,6 @@ function Baldas() {
         let y = (Math.random() * (0.300 - 3.0200) + 5.0200).toFixed(3)
         let z = (Math.random() * (0.200 - 3.0200) + 5.0200).toFixed(3)
         let a = (Math.random() * (0.120 - 3.0200) + 5.0200).toFixed(3)
-        $('#tabung1').html(x+' Ph');
         $('#tabung2').html(y+' Ph');
         $('#tabung3').html(z+' Ph');
         $('#tabung4').html(a+' Ph');

@@ -3,6 +3,8 @@ const UserModel = require('./models/user')
 const BlogModel = require('./models/blog')
 const TagModel = require('./models/tag')
 const StatusModel = require('./models/status')
+const StatusPhModel = require('./models/statusPh')
+
 // const { Sequelize, Model, DataTypes } = require('sequelize');
 // const sequelize = new Sequelize('sqlite::memory:');
 const sequelize = new Sequelize('mainDB', null, null, {    
@@ -18,6 +20,7 @@ const BlogTag = sequelize.define('blog_tag', {})
 const Blog = BlogModel(sequelize, Sequelize)
 const Tag = TagModel(sequelize, Sequelize)
 const Status = StatusModel(sequelize, Sequelize)
+const StatusPh = StatusPhModel(sequelize, Sequelize)
 
 Blog.belongsToMany(Tag, { through: BlogTag, unique: false })
 Tag.belongsToMany(Blog, { through: BlogTag, unique: false })
@@ -33,7 +36,8 @@ module.exports = {
   User,
   Blog,
   Tag,
-  Status
+  Status,
+  StatusPh,
 }
 // // cek koneksi
 // sequelize

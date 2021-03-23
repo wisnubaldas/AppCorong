@@ -2,6 +2,7 @@ extends layout
 block content
     #content.content
         h1=message
+        stat
         .row
             .col-lg-3.col-md-6
              .widget.widget-stats.bg-red
@@ -43,3 +44,43 @@ block content
                 .stats-link
                  a(href='javascript:;') View Detail 
                   i.fa.fa-arrow-alt-circle-right
+            .col-lg-12.col-md-12
+             table#data-table-default.table.table-striped.table-bordered.table-hover
+                thead
+                    tr
+                        th(width='1%')
+                        th.text-nowrap Tabung
+                        th.text-nowrap Nilai Ph
+                        th.text-nowrap Waktu Uji
+                tbody
+                    each ph in data_ph
+                        tr.odd.gradeX
+                            td.f-s-600(width='1%')=ph.id
+                            td Tabung 
+                                =ph.tabung
+                            td=ph.nilai
+                            td=ph.createdAt
+block script
+    script(src='../assets/plugins/DataTables/media/js/jquery.dataTables.js')
+    script(src='../assets/plugins/DataTables/media/js/dataTables.bootstrap.min.js')
+    script(src='../assets/plugins/DataTables/extensions/Responsive/js/dataTables.responsive.min.js')
+    script(src='../assets/js/demo/table-manage-default.demo.min.js')
+    script.
+        $(document).ready(function() {
+            TableManageDefault.init();
+            setInterval(function() {
+                //call $.ajax here
+                $.ajax({
+                    method: "GET",
+                    url: "/ph/tabung_satu"
+                })
+                .done(function( msg ) {
+                    //- console.log(msg.nilai)
+                    $('#tabung1').html(msg.nilai+' Ph')
+                });
+            }, 5000); //5 seconds
+
+        });
+block css
+    link(href='../assets/plugins/DataTables/media/css/dataTables.bootstrap.min.css' rel='stylesheet')
+    link(href='../assets/plugins/DataTables/extensions/Responsive/css/responsive.bootstrap.min.css' rel='stylesheet')
