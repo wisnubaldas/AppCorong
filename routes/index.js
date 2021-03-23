@@ -35,7 +35,7 @@ router.get('/', function(req, res, next) {
 router.post('/auth', function (req, res, next) {
   if(req.body.email == 'root')
   {
-    req.session.belekok = 'Root User'
+    req.session.belekok = 'Monitoring Dashbord'
     req.session.save( function(err) {
       req.session.reload( function (err) {
            res.redirect('/home');
